@@ -4,6 +4,7 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -88,6 +89,9 @@ public class BasicCreateProjectTest {
         driver.findElement(By.xpath("//div[@style='display: block;']/img[@src='/Images/dropdown.png']")).click();
         // Click en el boton de Delete
         driver.findElement(By.xpath("//ul[@id='projectContextMenu']//a[contains(.,'Delete')]")).click();
+        //Alert
+        Alert alert = driver.switchTo().alert();
+        alert.accept();
 
     }
 
