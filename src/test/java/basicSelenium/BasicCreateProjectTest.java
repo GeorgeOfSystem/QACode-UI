@@ -4,7 +4,6 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -65,33 +64,39 @@ public class BasicCreateProjectTest {
         // click en el dropdown button
         driver.findElement(By.xpath("//div[@style='display: block;']/img[@src='/Images/dropdown.png']")).click();
         // click edit button
+        String myPrjectName="DeleteUPBSelenium";
         driver.findElement(By.xpath("//ul[@id='projectContextMenu']//a[contains(.,'Edit')]")).click();
         // set nombre projecto actualizado
 
         driver.findElement(By.id("ItemEditTextbox")).clear();
-        driver.findElement(By.id("ItemEditTextbox")).sendKeys("UPBUpdate");
+        driver.findElement(By.id("ItemEditTextbox")).sendKeys(myPrjectName);
         // click save button
 
         driver.findElement(By.xpath("//li//div[@id='ProjectEditDiv']/*[@id=\"ItemEditSubmit\"]")).click();
 
         // verification
         Thread.sleep(3000);
-        expectedResult="UPBUpdate";
+        expectedResult=myPrjectName;
         actualResult=driver.findElement(By.xpath("//div[@id='CurrentProjectTitle']")).getText();
 
         Assert.assertEquals("El projecto no fue actualizado",expectedResult,actualResult);
 
-        // Delete de un project
+        // Delete Project
 
-        //click en el proyecto que hemos creado
-        driver.findElement(By.xpath("//li[last()]//td[contains(.,'"+expectedResult+"') and @class='ProjItemContent']")).click();
+        // click en el projecto que hemos creado
+        driver.findElement(By.xpath("//li[last()]//td[contains(.,'"+myPrjectName+"') and @class='ProjItemContent']")).click();
+
         // click en el dropdown button
         driver.findElement(By.xpath("//div[@style='display: block;']/img[@src='/Images/dropdown.png']")).click();
-        // Click en el boton de Delete
+
+        // click opcion de Delete
         driver.findElement(By.xpath("//ul[@id='projectContextMenu']//a[contains(.,'Delete')]")).click();
-        //Alert
-        Alert alert = driver.switchTo().alert();
-        alert.accept();
+        // click OK de la alerta
+        driver.switchTo().alert().accept();
+        // verificar que el project este borrado
+        Thread.sleep(3000);
+        actualResult=driver.findElement(By.xpath("//div[@id=\"ProjectListPlaceHolder\"]//li[last()]")).getText();
+        Assert.assertFalse("No borro el projecto",myPrjectName.equals(actualResult));
 
     }
 
