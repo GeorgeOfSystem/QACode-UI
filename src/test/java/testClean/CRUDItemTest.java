@@ -1,6 +1,5 @@
 package testClean;
 
-import org.junit.After;
 import org.junit.Assert;
 import org.junit.Test;
 import pomPages.todoLy.CenterSection;
@@ -9,7 +8,7 @@ import pomPages.todoLy.LoginModal;
 import pomPages.todoLy.MainPage;
 import singletonSession.Session;
 
-public class CRUDProjectTest extends  TestBaseTodoLy {
+public class CRUDItemTest extends  TestBaseTodoLy {
     MainPage mainPage= new MainPage();
     LoginModal loginModal= new LoginModal();
     LeftSection leftSection= new LeftSection();
@@ -19,7 +18,7 @@ public class CRUDProjectTest extends  TestBaseTodoLy {
 
     @Test
     public void verify_create_project_todoly() throws InterruptedException {
-        String name="CleanProject";
+        String name="GeorgeItemTest";
         mainPage.loginImage.click();
         loginModal.loginAction(user,pwd);
 
@@ -31,10 +30,9 @@ public class CRUDProjectTest extends  TestBaseTodoLy {
         Assert.assertEquals("ERROR !!Projecto No Creado",name, centerSection.projectNameLabel.getText());
 
         leftSection.clickOnProject(name);
-        leftSection.projectMenuButton.click();
-        leftSection.editOption.click();
 
-        name="CleanProjectUpdated";
+
+        name="GeorgeItemTestUpdated";
         leftSection.editNameProjectTextBox.set(name);
         leftSection.saveOption.click();
 
@@ -45,7 +43,7 @@ public class CRUDProjectTest extends  TestBaseTodoLy {
         leftSection.projectMenuButton.click();
         leftSection.deleteOption.click();
 
-        Session.getSession().getDriver().switchTo().alert().accept();
+        //Session.getSession().getDriver().switchTo().alert().accept();
 
         this.waitOnSecond(2);
         Assert.assertFalse("Projecto No fue Borrado",name.equals(leftSection.lastProjectInListLabel.getText()));
