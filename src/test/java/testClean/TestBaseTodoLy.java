@@ -9,7 +9,7 @@ import java.io.IOException;
 public class TestBaseTodoLy {
     @Before
     public void open(){
-        Session.getSession().getDriver().get("http://todo.ly/");
+        Session.getSession().getDriver().get("https://todoist.com/es/");
     }
 
     @After

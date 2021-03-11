@@ -14,16 +14,21 @@ public class LoginTest extends  TestBaseTodoLy{
     MainPage mainPage= new MainPage();
     LoginModal loginModal= new LoginModal();
     MenuSection menuSection= new MenuSection();
-    String user="upbui@upbui.com";
-    String pwd="1234";
+    String user="g@upbui.com";
+    String pwd="123456789";
+    String nombre = "george";
 
     @Test
-    public void verify_login_todoly(){
+    public void verify_login_todoly() throws InterruptedException {
         mainPage.loginImage.click();
         loginModal.emailTextBox.set(user);
-        loginModal.pwdTextBox.set(pwd);
         loginModal.loginButton.click();
-        Assert.assertTrue("ERROR, no se logueo",menuSection.logoutButton.controlIsDisplayed());
+        loginModal.nameTextBox.set(nombre);
+        loginModal.pwdTextBox.set(pwd);
+        loginModal.loginButton2.click();
+        loginModal.abrir.click();
+        this.waitOnSecond(2);
+        Assert.assertTrue("ERROR, no se logueo",menuSection.configButton.controlIsDisplayed());
     }
 
 

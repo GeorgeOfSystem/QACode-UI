@@ -1,6 +1,52 @@
-basicSelenium/BasicCreateProjectTest.java
- basicSelenium.BasicCreateProjectTest
-basicSelenium/BasicTest.java
- basicSelenium.BasicTest
 basicSelenium/BasicTodoLyTest.java
  basicSelenium.BasicTodoLyTest
+basicSelenium/BasicTest.java
+ basicSelenium.BasicTest
+controls/Label.java
+ controls.Label
+factoryBrowser/FactoryBrowser.java
+ factoryBrowser.FactoryBrowser
+pomPages/todoLy/LeftSection.java
+ pomPages.todoLy.LeftSection
+controls/CheckBox.java
+ controls.CheckBox
+controls/Control.java
+ controls.Control
+factoryBrowser/BrowserStack.java
+ factoryBrowser.BrowserStack
+factoryBrowser/IBrowser.java
+ factoryBrowser.IBrowser
+pomPages/todoLy/LoginModal.java
+ pomPages.todoLy.LoginModal
+controls/Image.java
+ controls.Image
+singletonSession/Session.java
+ singletonSession.Session
+pomPages/todoLy/CenterSection.java
+ pomPages.todoLy.CenterSection
+factoryBrowser/Edge.java
+ factoryBrowser.Edge
+basicSelenium/BasicCreateProjectTest.java
+ basicSelenium.BasicCreateProjectTest
+controls/Button.java
+ controls.Button
+factoryBrowser/Chrome.java
+ factoryBrowser.Chrome
+factoryBrowser/FireFox.java
+ factoryBrowser.FireFox
+testClean/TestBaseTodoLy.java
+ testClean.TestBaseTodoLy
+controls/TextBox.java
+ controls.TextBox
+pomPages/todoLy/MainPage.java
+ pomPages.todoLy.MainPage
+testClean/CRUDItemTest.java
+ testClean.CRUDItemTest
+testClean/CRUDProjectTest.java
+ testClean.CRUDProjectTest
+testClean/CreateProjectTest.java
+ testClean.CreateProjectTest
+pomPages/todoLy/MenuSection.java
+ pomPages.todoLy.MenuSection
+testClean/LoginTest.java
+ testClean.LoginTest
